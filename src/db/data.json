@@ -1,0 +1,26 @@
+{
+  "isItCorrects": [
+    {
+      "id": 1,
+      "isItCorrect": "정답"
+    },
+    {
+      "id": 2,
+      "isItCorrect": "땡"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "ques": "1더하기 2는?",
+      "myAnswer": 34,
+      "isItCorrect": "정답"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import { useState } from "react"
+// import CreatepreviousQ from "./CreatepreviousQ";
 
 export default function GuGuDan () {
     const randomNumber = Math.ceil(Math.random() * 9);
@@ -8,7 +9,8 @@ export default function GuGuDan () {
     const [second, setSecond] = useState(randomNumber2);
     const [value, setValue] = useState();
     const [result, setResult] = useState();
-    const [index, setIndex] = useState(1);
+
+    const sentence = ` ${first} 곱하기 ${second} 는? `;
 
     const valueChange = (e) => {
         setValue(e.target.value)
@@ -16,6 +18,7 @@ export default function GuGuDan () {
 
     const gugudanLogic = (e) => {
         e.preventDefault();
+
         if(parseInt(value) === first * second){
             setFirst(randomNumber);
             setSecond(randomNumber2);
@@ -27,22 +30,14 @@ export default function GuGuDan () {
         }
     }
 
-    const 기출문제 = value;
-
     return (
         <>
-            <div>{first}곱하기{second}는?</div>
+            <div>{sentence}</div>
             <form onSubmit={gugudanLogic}>
                 <input type="text" value={value} onChange={valueChange}/>
                 <button>입력 !</button>
             </form>
             <div>{result}</div>
-            <br />
-            <div>기출 문제</div>
-            <div>
-                <p dangerouslySetInnerHTML={{__html: 기출문제 }}></p>
-                {index}
-            </div>
         </>
     )
 }
