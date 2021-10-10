@@ -22,19 +22,23 @@ export default function GuGuDan () {
         if(parseInt(value) === first * second){
             setFirst(randomNumber);
             setSecond(randomNumber2);
-            setResult("정답");
+            setResult("정답 : " + value);
             setValue("");
+            inputFocus.focus();
         } else {
-            setResult("땡");
+            setResult("땡, " + value + "을 쓰니깐 틀리지");
             setValue("");
+            inputFocus.focus();
         }
     }
 
+    let inputFocus;
+    const onRefInput = (e)=> {inputFocus = e}
     return (
         <>
             <div>{sentence}</div>
             <form onSubmit={gugudanLogic}>
-                <input type="text" value={value} onChange={valueChange}/>
+                <input ref={onRefInput} type="text" value={value} onChange={valueChange}/>
                 <button>입력 !</button>
             </form>
             <div>{result}</div>
